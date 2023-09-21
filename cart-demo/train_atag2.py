@@ -27,10 +27,10 @@ def main():
     # Test environment for Browser library
     browserEnv = BrowserEnv(config)
     # ML algorithm for test generation
-    atag_browser = Atag(env=browserEnv, **parameters)
+    atag_browser = Atag2(env=browserEnv, **parameters)
 
     # Train 
-    atag_browser.train()
+    atag_browser.experiment()
     browserEnv.terminate()
 
 if __name__ == '__main__':

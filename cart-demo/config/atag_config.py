@@ -24,7 +24,7 @@ class Atag_config(object):
             'click_actions': ['A', 'BUTTON'],
             'ignore_elements': ['DIV'],
             'type_actions': ['INPUT'],
-            'type_word_list': []
+            'type_word_list': ['test', 'test@test.fi']
         }
 
     def setup_env(self):

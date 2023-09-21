@@ -5,6 +5,9 @@ sys.path.insert(0, '../../ATAG/')
 from atag import Atag
 from browserenv import BrowserEnv
 from config.atag_config import Atag_config
+from browserenv.datahandler import TrainingData
+
+trainingData = TrainingData({'training_data_path': 'config/temp/'})
 
 #Parameters for Atag & algorithm
 parameters = {
@@ -17,9 +20,13 @@ parameters = {
     'gae_lambda': 0.95,
     'clip': 0.2,
     'save_frequency': 50,
-    'actor_file': 'actor.pt',
-    'critic_file': 'critic.pt'
+    'trainingData': trainingData
 }
+
+"""
+   'actor_file': 'actor.pt',
+   'critic_file': 'critic.pt'
+"""
 
 def main():
     # Config for browserEnvironment
