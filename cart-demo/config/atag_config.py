@@ -52,17 +52,17 @@ class Atag_config(object):
         reward = 0.0
         done = False
 
-        xpath = "//*[starts-with(., 'Grand Total: $') and number(substring-after(., 'Grand Total: $ ')) > 100]"
+        xpath = "//*[starts-with(., 'Grand Total: $') and number(substring-after(., 'Grand Total: $ ')) > 5000]"
         if "visible" in self.test_env.get_element_states(xpath):
             reward += 90.0
-            done = True
+            done = False
 
-        xpath = "//*[starts-with(., 'Grand Total: $') and number(substring-after(., 'Grand Total: $ ')) > 50]"
+        xpath = "//*[starts-with(., 'Grand Total: $') and number(substring-after(., 'Grand Total: $ ')) > 400]"
         if "visible" in self.test_env.get_element_states(xpath):
             reward += 60.0
-            done = True
+            done = False
 
-        xpath = "//div[@class='CartPage_body__9xgUX']//*[contains(text(),'Fortnite')]"
+        xpath = "//div[@class='CartPage_body__9xgUX']//*[contains(text(),'MusicMixer')]"
         if "visible" in self.test_env.get_element_states(xpath):
             reward += 40.0
         
