@@ -52,7 +52,7 @@ class Atag_config(object):
         reward = 0.0
         done = False
 
-        xpath = "//*[starts-with(., 'Grand Total: $') and number(substring-after(., 'Grand Total: $ ')) > 5000]"
+        """        xpath = "//*[starts-with(., 'Grand Total: $') and number(substring-after(., 'Grand Total: $ ')) > 5000]"
         if "visible" in self.test_env.get_element_states(xpath):
             reward += 90.0
             done = False
@@ -68,6 +68,6 @@ class Atag_config(object):
         
         xpath = "//A[contains(text(),'Cart') and not(contains(text(),'Cart (0)'))]"
         if "visible" in self.test_env.get_element_states(xpath):
-            reward += 6.0
+            reward += 6.0"""
 
         return reward, done
