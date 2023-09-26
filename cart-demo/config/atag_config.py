@@ -18,12 +18,12 @@ class Atag_config(object):
         }
 
         self.data_collection = {
-            'collect_data': False,
+            'collect_data': True,
             'elements_file': 'config_elements.json',
             'actions_file': 'config_actions.json',
             'temp_config_path': 'config/temp/',
             'click_actions': ['A', 'BUTTON'],
-            'ignore_elements': ['DIV'],
+            'ignore_elements': ['DIV','P'],
             'type_actions': ['INPUT'],
             'type_word_list': ['test', 'test@test.fi']
         }
@@ -59,14 +59,14 @@ class Atag_config(object):
         if not self.testStepReached and "visible" in self.test_env.get_element_states(xpath):
             reward += 90.0
 
+        xpath = "//div[@class='CartPage_body__9xgUX']//*[contains(text(),'MusicMixer')]"
+        if not self.testStepReached and "visible" in self.test_env.get_element_states(xpath):
+            reward += 40.0
+
         xpath = "//*[starts-with(., 'Grand Total: $') and number(substring-after(., 'Grand Total: $ ')) > 400]"
         if not self.testStepReached and "visible" in self.test_env.get_element_states(xpath):
             reward += 60.0
             self.testStepReached = True
-
-        xpath = "//div[@class='CartPage_body__9xgUX']//*[contains(text(),'MusicMixer')]"
-        if not self.testStepReached and "visible" in self.test_env.get_element_states(xpath):
-            reward += 40.0
         
         xpath = "//*[contains(text(),'Purchase Successful!')]"
         if "visible" in self.test_env.get_element_states(xpath):
