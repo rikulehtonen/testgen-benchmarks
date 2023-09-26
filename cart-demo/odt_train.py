@@ -10,7 +10,7 @@ from config.atag_config import Atag_config
 parameters = parameters = {
     "log_to_wandb": True,
     "online_training": True,
-    "pretrained_model": "dt_experiment-browser-web-app-681095.pt",
+    "pretrained_model": "dt_experiment-browser-web-app-899264.pt",
     "mode": "normal",
     "K": 20,
     "pct_traj": 1.0,

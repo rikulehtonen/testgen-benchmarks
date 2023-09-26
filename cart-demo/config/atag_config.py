@@ -6,6 +6,7 @@ import numpy as np
 class Atag_config(object):
     def __init__(self):
         self.test_env = None
+        self.testStepReached = False
 
         self.env_parameters = {
             'elements_file': 'config_elements.json',
@@ -35,12 +36,14 @@ class Atag_config(object):
     
     def teardown_env(self):
         self.test_env.close_browser()
+        self.testStepReached = False
 
     def setup_test(self):
         page = 'http://localhost:3000/'
         self.test_env.set_browser_timeout("10 s")
         self.test_env.new_page(page)
         self.test_env.set_browser_timeout("700 ms")
+        self.testStepReached = False
 
     def teardown_test(self):
         self.test_env.close_page()
@@ -52,22 +55,22 @@ class Atag_config(object):
         reward = 0.0
         done = False
 
-        """        xpath = "//*[starts-with(., 'Grand Total: $') and number(substring-after(., 'Grand Total: $ ')) > 5000]"
-        if "visible" in self.test_env.get_element_states(xpath):
+        xpath = "//*[starts-with(., 'Grand Total: $') and number(substring-after(., 'Grand Total: $ ')) > 5000]"
+        if not self.testStepReached and "visible" in self.test_env.get_element_states(xpath):
             reward += 90.0
-            done = False
 
         xpath = "//*[starts-with(., 'Grand Total: $') and number(substring-after(., 'Grand Total: $ ')) > 400]"
-        if "visible" in self.test_env.get_element_states(xpath):
+        if not self.testStepReached and "visible" in self.test_env.get_element_states(xpath):
             reward += 60.0
-            done = False
+            self.testStepReached = True
 
         xpath = "//div[@class='CartPage_body__9xgUX']//*[contains(text(),'MusicMixer')]"
-        if "visible" in self.test_env.get_element_states(xpath):
+        if not self.testStepReached and "visible" in self.test_env.get_element_states(xpath):
             reward += 40.0
         
-        xpath = "//A[contains(text(),'Cart') and not(contains(text(),'Cart (0)'))]"
+        xpath = "//*[contains(text(),'Purchase Successful!')]"
         if "visible" in self.test_env.get_element_states(xpath):
-            reward += 6.0"""
+            reward += 500.0
+            done = True
 
         return reward, done
