@@ -13,8 +13,9 @@ class Atag_config(object):
             'actions_file': 'config_actions.json',
             'config_path': 'config/',
             'results_location': 'results/model2/',
-            'passed_action_cost': -10.0,
-            'failed_action_cost': -20.0,
+            'passed_action_cost': -5.0,
+            'failed_action_cost': -25.0,
+            'stagnation_cost': -10.0
         }
 
         self.data_collection = {
@@ -30,7 +31,7 @@ class Atag_config(object):
 
     def setup_env(self):
         self.test_env = Browser(timeout="10000 ms", retry_assertions_for="10 ms", strict=False)
-        self.test_env.new_browser(headless=False, browser=SupportedBrowsers.chromium)
+        self.test_env.new_browser(headless=True, browser=SupportedBrowsers.chromium)
         self.test_env.new_context(acceptDownloads=True, viewport={"width": 700, "height": 500})
         return self.test_env
     
@@ -57,20 +58,20 @@ class Atag_config(object):
 
         xpath = "//*[starts-with(., 'Grand Total: $') and number(substring-after(., 'Grand Total: $ ')) > 5000]"
         if not self.testStepReached and "visible" in self.test_env.get_element_states(xpath):
-            reward += 90.0
+            reward += 500.0
 
         xpath = "//div[@class='CartPage_body__9xgUX']//*[contains(text(),'MusicMixer')]"
         if not self.testStepReached and "visible" in self.test_env.get_element_states(xpath):
-            reward += 40.0
+            reward += 100.0
 
         xpath = "//*[starts-with(., 'Grand Total: $') and number(substring-after(., 'Grand Total: $ ')) > 400]"
         if not self.testStepReached and "visible" in self.test_env.get_element_states(xpath):
-            reward += 60.0
+            reward += 50.0
             self.testStepReached = True
         
         xpath = "//*[contains(text(),'Purchase Successful!')]"
         if "visible" in self.test_env.get_element_states(xpath):
-            reward += 500.0
+            reward += 1000.0
             done = True
 
         return reward, done

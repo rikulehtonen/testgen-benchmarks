@@ -14,15 +14,13 @@ parameters = {
     'lr': 1e-4,
     'max_timesteps': 50000,
     'batch_timesteps': 6,
-    'episode_max_timesteps': 12,
+    'episode_max_timesteps': 13,
     'iteration_epochs': 10,
     'gamma': 0.99,
     'gae_lambda': 0.95,
     'clip': 0.2,
-    'save_frequency': 50,
-    'trainingData': trainingData,
-    'actor_file': 'actor.pt',
-    'critic_file': 'critic.pt'
+    'save_frequency': 100,
+    'trainingData': trainingData
 }
 
 
