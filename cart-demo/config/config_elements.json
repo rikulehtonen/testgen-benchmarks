@@ -146,9 +146,6 @@
  {"tag": "IMG", "text": "", "attributes": [{"key": "loading", "value": "lazy"}, {"key": "width", "value": "65"}, {"key": "height", "value": "90"}, {"key": "decoding", "value": "async"}, {"key": "data-nimg", "value": "1"}, {"key": "srcset", "value": "/_next/image?url=%2Fimg%2F6.jpg&w=96&q=75 1x, /_next/image?url=%2Fimg%2F6.jpg&w=256&q=75 2x"}, {"key": "src", "value": "/_next/image?url=%2Fimg%2F6.jpg&w=256&q=75"}, {"key": "style", "value": "color: transparent;"}]},
  {"tag": "IMG", "text": "", "attributes": [{"key": "loading", "value": "lazy"}, {"key": "width", "value": "65"}, {"key": "height", "value": "90"}, {"key": "decoding", "value": "async"}, {"key": "data-nimg", "value": "1"}, {"key": "srcset", "value": "/_next/image?url=%2Fimg%2F3.jpg&w=96&q=75 1x, /_next/image?url=%2Fimg%2F3.jpg&w=256&q=75 2x"}, {"key": "src", "value": "/_next/image?url=%2Fimg%2F3.jpg&w=256&q=75"}, {"key": "style", "value": "color: transparent;"}]},
  {"tag": "FORM", "text": "Submit Order", "attributes": [{"key": "class", "value": "CartPage_inputs__QVHfD"}]},
- {"tag": "INPUT", "text": "", "value": "", "attributes": [{"key": "type", "value": "text"}, {"key": "name", "value": "name"}, {"key": "placeholder", "value": "Full Name"}, {"key": "value", "value": ""}]},
- {"tag": "INPUT", "text": "", "value": "", "attributes": [{"key": "type", "value": "email"}, {"key": "name", "value": "email"}, {"key": "placeholder", "value": "Email"}, {"key": "value", "value": ""}]},
- {"tag": "INPUT", "text": "", "value": "", "attributes": [{"key": "type", "value": "text"}, {"key": "name", "value": "address"}, {"key": "placeholder", "value": "Address"}, {"key": "value", "value": ""}]},
  {"tag": "BUTTON", "text": "Submit Order", "value": "", "attributes": [{"key": "type", "value": "submit"}, {"key": "disabled", "value": ""}]},
  {"tag": "NEXT-ROUTE-ANNOUNCER", "text": "/cart", "attributes": []},
  {"tag": "NAV", "text": "ROBO_STOREHomeShopCart (8)", "attributes": [{"key": "class", "value": "Navbar_navbar__66x_3"}]},
@@ -172,15 +169,22 @@
  {"tag": "A", "text": "Cart (10)", "attributes": []},
  {"tag": "IMG", "text": "", "attributes": [{"key": "loading", "value": "lazy"}, {"key": "width", "value": "65"}, {"key": "height", "value": "90"}, {"key": "decoding", "value": "async"}, {"key": "data-nimg", "value": "1"}, {"key": "srcset", "value": "/_next/image?url=%2Fimg%2F2.jpg&w=96&q=75 1x, /_next/image?url=%2Fimg%2F2.jpg&w=256&q=75 2x"}, {"key": "src", "value": "/_next/image?url=%2Fimg%2F2.jpg&w=256&q=75"}, {"key": "style", "value": "color: transparent;"}]},
  {"tag": "IMG", "text": "", "attributes": [{"key": "loading", "value": "lazy"}, {"key": "width", "value": "65"}, {"key": "height", "value": "90"}, {"key": "decoding", "value": "async"}, {"key": "data-nimg", "value": "1"}, {"key": "srcset", "value": "/_next/image?url=%2Fimg%2F7.jpg&w=96&q=75 1x, /_next/image?url=%2Fimg%2F7.jpg&w=256&q=75 2x"}, {"key": "src", "value": "/_next/image?url=%2Fimg%2F7.jpg&w=256&q=75"}, {"key": "style", "value": "color: transparent;"}]},
- {"tag": "INPUT", "text": "", "value": "test", "attributes": [{"key": "type", "value": "text"}, {"key": "name", "value": "address"}, {"key": "placeholder", "value": "Address"}, {"key": "value", "value": "test"}]},
- {"tag": "INPUT", "text": "", "value": "test@test.fi", "attributes": [{"key": "type", "value": "text"}, {"key": "name", "value": "name"}, {"key": "placeholder", "value": "Full Name"}, {"key": "value", "value": "test@test.fi"}]},
- {"tag": "INPUT", "text": "", "value": "test@test.fi", "attributes": [{"key": "type", "value": "text"}, {"key": "name", "value": "address"}, {"key": "placeholder", "value": "Address"}, {"key": "value", "value": "test@test.fi"}]},
  {"tag": "NAV", "text": "ROBO_STOREHomeShopCart (11)", "attributes": [{"key": "class", "value": "Navbar_navbar__66x_3"}]},
  {"tag": "UL", "text": "HomeShopCart (11)", "attributes": [{"key": "class", "value": "Navbar_links__JmvAX"}]},
  {"tag": "LI", "text": "Cart (11)", "value": 0, "attributes": [{"key": "class", "value": "Navbar_navlink__w4k_R"}]},
  {"tag": "A", "text": "Cart (11)", "attributes": [{"key": "href", "value": "/cart"}]},
  {"tag": "A", "text": "Cart (11)", "attributes": []},
- {"tag": "INPUT", "text": "", "value": "test@test.fi", "attributes": [{"key": "type", "value": "email"}, {"key": "name", "value": "email"}, {"key": "placeholder", "value": "Email"}, {"key": "value", "value": "test@test.fi"}]},
  {"tag": "BUTTON", "text": "Submit Order", "value": "", "attributes": [{"key": "type", "value": "submit"}]},
+
+ {"tag": "INPUT", "text": "", "value": "", "attributes": [{"key": "type", "value": "text"}, {"key": "name", "value": "name"}, {"key": "placeholder", "value": "Full Name"}, {"key": "value", "value": ""}]},
+ {"tag": "INPUT", "text": "", "value": "test@test.fi", "attributes": [{"key": "type", "value": "text"}, {"key": "name", "value": "name"}, {"key": "placeholder", "value": "Full Name"}, {"key": "value", "value": "test@test.fi"}]},
+ {"tag": "INPUT", "text": "", "value": "test", "attributes": [{"key": "type", "value": "text"}, {"key": "name", "value": "name"}, {"key": "placeholder", "value": "Full Name"}, {"key": "value", "value": "test"}]},
+
+ {"tag": "INPUT", "text": "", "value": "", "attributes": [{"key": "type", "value": "text"}, {"key": "name", "value": "address"}, {"key": "placeholder", "value": "Address"}, {"key": "value", "value": ""}]},
+ {"tag": "INPUT", "text": "", "value": "test@test.fi", "attributes": [{"key": "type", "value": "text"}, {"key": "name", "value": "address"}, {"key": "placeholder", "value": "Address"}, {"key": "value", "value": "test@test.fi"}]},
+ {"tag": "INPUT", "text": "", "value": "test", "attributes": [{"key": "type", "value": "text"}, {"key": "name", "value": "address"}, {"key": "placeholder", "value": "Address"}, {"key": "value", "value": "test"}]},
+
+ {"tag": "INPUT", "text": "", "value": "", "attributes": [{"key": "type", "value": "email"}, {"key": "name", "value": "email"}, {"key": "placeholder", "value": "Email"}, {"key": "value", "value": ""}]},
+ {"tag": "INPUT", "text": "", "value": "test@test.fi", "attributes": [{"key": "type", "value": "email"}, {"key": "name", "value": "email"}, {"key": "placeholder", "value": "Email"}, {"key": "value", "value": "test@test.fi"}]},
  {"tag": "INPUT", "text": "", "value": "test", "attributes": [{"key": "type", "value": "email"}, {"key": "name", "value": "email"}, {"key": "placeholder", "value": "Email"}, {"key": "value", "value": "test"}]}
 ]

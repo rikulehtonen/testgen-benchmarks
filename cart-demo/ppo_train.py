@@ -22,10 +22,11 @@ parameters = {
     'clip': 0.2,
     'save_frequency': 50,
     'trainingData': trainingData,
+    'actor_file': 'actor.pt',
+    'critic_file': 'critic.pt'
 }
 
-"""    'actor_file': 'actor.pt',
-    'critic_file': 'critic.pt'"""
+
 
 def main():
     # Config for browserEnvironment
