@@ -39,7 +39,7 @@ parameters = {
     "target_entropy": False,
     "stochastic_tanh": True,
     "approximate_entropy_samples": 1000,
-    "dataset_path": "training_data.json"
+    "dataset_path": "final-models/training_data.json"
 }
 
 def main():

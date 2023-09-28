@@ -31,7 +31,7 @@ class Atag_config(object):
 
     def setup_env(self):
         self.test_env = Browser(timeout="10000 ms", retry_assertions_for="10 ms", strict=False)
-        self.test_env.new_browser(headless=True, browser=SupportedBrowsers.chromium)
+        self.test_env.new_browser(headless=False, browser=SupportedBrowsers.chromium)
         self.test_env.new_context(acceptDownloads=True, viewport={"width": 700, "height": 500})
         return self.test_env
     
@@ -56,7 +56,7 @@ class Atag_config(object):
         reward = 0.0
         done = False
 
-        xpath = "//*[starts-with(., 'Grand Total: $') and number(substring-after(., 'Grand Total: $ ')) > 5000]"
+        """        xpath = "//*[starts-with(., 'Grand Total: $') and number(substring-after(., 'Grand Total: $ ')) > 5000]"
         if not self.testStepReached and "visible" in self.test_env.get_element_states(xpath):
             reward += 500.0
 
@@ -72,6 +72,6 @@ class Atag_config(object):
         xpath = "//*[contains(text(),'Purchase Successful!')]"
         if "visible" in self.test_env.get_element_states(xpath):
             reward += 1000.0
-            done = True
+            done = True"""
 
         return reward, done

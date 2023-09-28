@@ -10,7 +10,7 @@ from config.atag_config import Atag_config
 parameters = parameters = {
     "log_to_wandb": True,
     "online_training": True,
-    "pretrained_model": "dt_experiment-browser-web-app-899264.pt",
+    "pretrained_model": "final-models\dt_pretrained.pt",
     "mode": "normal",
     "K": 20,
     "pct_traj": 1.0,
@@ -39,7 +39,7 @@ parameters = parameters = {
     "target_entropy": False,
     "stochastic_tanh": True,
     "approximate_entropy_samples": 1000,
-    "dataset_path": "training_data.json"
+    "dataset_path": "final-models/training_data.json"
 }
 
 def main():
