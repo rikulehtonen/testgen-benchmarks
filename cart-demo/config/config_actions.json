@@ -1,6 +1,6 @@
 [{"keyword": "click", "args": ["xpath=//A[@href='/'][contains(text(),'Home')]"]},
  {"keyword": "click", "args": ["xpath=//A[@href='/shop'][contains(text(),'Shop')]"]},
- {"keyword": "click", "args": ["xpath=//A[contains(text(),'Cart)]"]},
+ {"keyword": "click", "args": ["xpath=//A[contains(text(),'Cart')]"]},
  {"keyword": "click", "args": ["xpath=//A[@href='/category/Home']"]},
  {"keyword": "click", "args": ["xpath=//A[@href='/category/Security']"]},
  {"keyword": "click", "args": ["xpath=//A[@href='/category/Healthcare']"]},
