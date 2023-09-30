@@ -15,7 +15,7 @@ parameters = {
     'lr': 5e-4,
     'max_timesteps': 50000,
     'batch_timesteps': 6,
-    'episode_max_timesteps': 12,
+    'episode_max_timesteps': 20,
     'iteration_epochs': 10,
     'gamma': 0.99,
     'gae_lambda': 0.95,

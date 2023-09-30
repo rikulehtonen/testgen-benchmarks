@@ -6,7 +6,7 @@ import numpy as np
 class Atag_config(object):
     def __init__(self):
         self.test_env = None
-        self.testStepReached = False
+        self.stepReached = [False, False, False]
 
         self.env_parameters = {
             'elements_file': 'config_elements.json',
@@ -37,7 +37,7 @@ class Atag_config(object):
     
     def teardown_env(self):
         self.test_env.close_browser()
-        self.testStepReached = False
+        self.stepReached = [False, False, False]
 
     def setup_test(self):
         page = 'http://localhost:3000/'
@@ -57,17 +57,19 @@ class Atag_config(object):
         done = False
 
         xpath = "//*[starts-with(., 'Grand Total: $') and number(substring-after(., 'Grand Total: $ ')) > 5000]"
-        if not self.testStepReached and "visible" in self.test_env.get_element_states(xpath):
+        if not self.stepReached[0] and "visible" in self.test_env.get_element_states(xpath):
             reward += 500.0
+            self.stepReached[0] = True
 
         xpath = "//div[@class='CartPage_body__9xgUX']//*[contains(text(),'MusicMixer')]"
-        if not self.testStepReached and "visible" in self.test_env.get_element_states(xpath):
+        if not self.stepReached[1] and "visible" in self.test_env.get_element_states(xpath):
             reward += 100.0
+            self.stepReached[1] = True
 
         xpath = "//*[starts-with(., 'Grand Total: $') and number(substring-after(., 'Grand Total: $ ')) > 400]"
-        if not self.testStepReached and "visible" in self.test_env.get_element_states(xpath):
-            reward += 50.0
-            self.testStepReached = True
+        if not self.stepReached[2] and "visible" in self.test_env.get_element_states(xpath):
+            reward += 200.0
+            self.stepReached[2] = True
         
         xpath = "//*[contains(text(),'Purchase Successful!')]"
         if "visible" in self.test_env.get_element_states(xpath):
