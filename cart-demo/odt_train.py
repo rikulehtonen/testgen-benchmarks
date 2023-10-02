@@ -37,7 +37,7 @@ parameters = parameters = {
     "remove_pos_embs": True,
     "eval_context": 5,
     "target_entropy": False,
-    "stochastic_tanh": True,
+    "stochastic_tanh": False,
     "approximate_entropy_samples": 1000,
     "dataset_path": "final-models/training_data.json"
 }
