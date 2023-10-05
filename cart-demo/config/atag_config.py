@@ -56,7 +56,7 @@ class Atag_config(object):
         reward = 0.0
         done = False
 
-        xpath = "//*[starts-with(., 'Grand Total: $') and number(substring-after(., 'Grand Total: $ ')) > 5000]"
+        """        xpath = "//*[starts-with(., 'Grand Total: $') and number(substring-after(., 'Grand Total: $ ')) > 5000]"
         if not self.stepReached[0] and "visible" in self.test_env.get_element_states(xpath):
             reward += 500.0
             self.stepReached[0] = True
@@ -74,6 +74,6 @@ class Atag_config(object):
         xpath = "//*[contains(text(),'Purchase Successful!')]"
         if "visible" in self.test_env.get_element_states(xpath):
             reward += 1000.0
-            done = True
+            done = True"""
 
         return reward, done

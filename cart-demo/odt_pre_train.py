@@ -8,7 +8,7 @@ from config.atag_config import Atag_config
 
 #Parameters for Atag & algorithm
 parameters = {
-    "log_to_wandb": True,
+    "log_to_wandb": False,
     "online_training": False,
     "pretrained_model": None,
     "mode": "normal",
@@ -24,12 +24,12 @@ parameters = {
     "learning_rate": 1e-4,
     "weight_decay": 5e-4,
     "warmup_steps": 100,
-    "num_eval_episodes": 10,
+    "num_eval_episodes": 30,
     "max_iters": 5,
     "num_steps_per_iter": 100,
     "device": "cuda",
     "save_model": False,
-    "stochastic": False,
+    "stochastic": True,
     "use_entropy": False,
     "use_action_means": True,
     "online_buffer_size": 1000,
