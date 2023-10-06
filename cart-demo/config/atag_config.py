@@ -37,14 +37,13 @@ class Atag_config(object):
     
     def teardown_env(self):
         self.test_env.close_browser()
-        self.stepReached = [False, False, False]
 
     def setup_test(self):
         page = 'http://localhost:3000/'
         self.test_env.set_browser_timeout("10 s")
         self.test_env.new_page(page)
         self.test_env.set_browser_timeout("700 ms")
-        self.testStepReached = False
+        self.stepReached = [False]
 
     def teardown_test(self):
         self.test_env.close_page()
@@ -56,20 +55,10 @@ class Atag_config(object):
         reward = 0.0
         done = False
 
-        xpath = "//*[starts-with(., 'Grand Total: $') and number(substring-after(., 'Grand Total: $ ')) > 5000]"
-        if not self.stepReached[0] and "visible" in self.test_env.get_element_states(xpath):
-            reward += 500.0
-            self.stepReached[0] = True
-
-        xpath = "//div[@class='CartPage_body__9xgUX']//*[contains(text(),'MusicMixer')]"
-        if not self.stepReached[1] and "visible" in self.test_env.get_element_states(xpath):
-            reward += 100.0
-            self.stepReached[1] = True
-
         xpath = "//*[starts-with(., 'Grand Total: $') and number(substring-after(., 'Grand Total: $ ')) > 400]"
-        if not self.stepReached[2] and "visible" in self.test_env.get_element_states(xpath):
-            reward += 200.0
-            self.stepReached[2] = True
+        if not self.stepReached[0] and "visible" in self.test_env.get_element_states(xpath):
+            reward += 800.0
+            self.stepReached[0] = True
         
         xpath = "//*[contains(text(),'Purchase Successful!')]"
         if "visible" in self.test_env.get_element_states(xpath):
