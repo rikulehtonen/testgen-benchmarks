@@ -13,7 +13,7 @@ trainingData = TrainingData({'training_data_path': 'config/temp/'})
 parameters = {
     'log_to_wandb': True,
     'lr': 1e-4,
-    'entropy_coeff': 0.01,
+    'entropy_coeff': 0.00,
     'max_timesteps': 50000,
     'batch_timesteps': 6,
     'episode_max_timesteps': 20,
