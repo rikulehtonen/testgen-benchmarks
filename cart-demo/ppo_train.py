@@ -12,7 +12,7 @@ trainingData = TrainingData({'training_data_path': 'config/temp/'})
 #Parameters for Atag & algorithm
 parameters = {
     'log_to_wandb': True,
-    'lr': 5e-4,
+    'lr': 1e-4,
     'entropy_coeff': 0.01,
     'max_timesteps': 50000,
     'batch_timesteps': 6,
@@ -22,13 +22,11 @@ parameters = {
     'gae_lambda': 0.95,
     'clip': 0.2,
     'save_frequency': 50,
-    'trainingData': trainingData,
-    'actor_file': 'final-models/ppo_pretrained_actor.pt',
-    'critic_file': 'final-models/ppo_pretrained_critic.pt'
+    'trainingData': trainingData
 }
 
-"""    'actor_file': 'actor.pt',
-    'critic_file': 'critic.pt'"""
+""" 'actor_file': 'final-models/ppo_pretrained_actor.pt',
+    'critic_file': 'final-models/ppo_pretrained_critic.pt'"""
 
 def main():
     # Config for browserEnvironment

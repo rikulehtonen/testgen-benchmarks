@@ -14,7 +14,7 @@ parameters = parameters = {
     "mode": "normal",
     "K": 20,
     "pct_traj": 1.0,
-    "batch_size": 32,
+    "batch_size": 256,
     "model_type": "dt",
     "embed_dim": 512,
     "n_layer": 4,
