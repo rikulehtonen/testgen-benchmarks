@@ -46,13 +46,10 @@ class Atag_config(object):
         self.stepReached = [False]
 
     def teardown_test(self):
-        try:
-            self.test_env.close_page()
-        except:
-            print("Teardown error")
+        self.test_env.close_page()
 
     def env_ready(self):
-        time.sleep(0.07)
+        time.sleep(0.1)
 
     def state_rewards(self):
         reward = 0.0
