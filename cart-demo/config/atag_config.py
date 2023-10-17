@@ -15,11 +15,11 @@ class Atag_config(object):
             'results_location': 'results/model2/',
             'passed_action_cost': -5.0,
             'failed_action_cost': -25.0,
-            'stagnation_cost': -10.0
+            'stagnation_cost': -15.0
         }
 
         self.data_collection = {
-            'collect_data': True,
+            'collect_data': False,
             'elements_file': 'config_elements.json',
             'actions_file': 'config_actions.json',
             'temp_config_path': 'config/temp/',
