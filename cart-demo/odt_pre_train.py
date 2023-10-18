@@ -8,7 +8,7 @@ from config.atag_config import Atag_config
 
 #Parameters for Atag & algorithm
 parameters = {
-    "log_to_wandb": False,
+    "log_to_wandb": True,
     "online_training": False,
     "pretrained_model": None,
     "mode": "normal",

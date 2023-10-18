@@ -1,6 +1,7 @@
 [{"keyword": "click", "args": ["xpath=//A[@href='/'][contains(text(),'Home')]"]},
  {"keyword": "click", "args": ["xpath=//A[@href='/shop'][contains(text(),'Shop')]"]},
  {"keyword": "click", "args": ["xpath=//A[contains(text(),'Cart')]"]},
+ {"keyword": "click", "args": ["xpath=//A[contains(text(),'User')]"]},
  {"keyword": "click", "args": ["xpath=//A[@href='/category/Home']"]},
  {"keyword": "click", "args": ["xpath=//A[@href='/category/Security']"]},
  {"keyword": "click", "args": ["xpath=//A[@href='/category/Healthcare']"]},
@@ -55,4 +56,7 @@
  {"keyword": "type_text", "args": ["xpath=//INPUT[@type='email'][@name='email'][@placeholder='Email']", "test@test.fi"]},
  {"keyword": "click", "args": ["xpath=//BUTTON[@type='submit'][contains(text(),'Submit Order')]"]},
  {"keyword": "type_text", "args": ["xpath=//INPUT[@type='email'][@name='email'][@placeholder='Email']", "test"]},
- {"keyword": "type_text", "args": ["xpath=//INPUT[@type='email'][@name='email'][@placeholder='Email']", "test@test.fi"]}]
+ {"keyword": "type_text", "args": ["xpath=//INPUT[@type='email'][@name='email'][@placeholder='Email']", "test@test.fi"]},
+ {"keyword": "type_text", "args": ["xpath=//INPUT[@type='text']", "robo"]},
+ {"keyword": "type_text", "args": ["xpath=//INPUT[@type='text']", "check"]},
+ {"keyword": "click", "args": ["text=Search"]}]
