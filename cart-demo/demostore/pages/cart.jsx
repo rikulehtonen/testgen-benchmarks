@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { incrementQuantity, decrementQuantity, removeFromCart } from '../redux/cart.slice';
 import styles from '../styles/CartPage.module.css';
 
@@ -76,6 +77,8 @@ const CartPage = () => {
             </div>
           ))}
           <h2>{"Grand Total: $ " + getTotalPrice().toFixed(2)}</h2>
+
+          <Link href="/user">Login</Link>
 
           <form onSubmit={handlePurchase} className={styles.inputs}>
             <input type="text" name="name" placeholder="Full Name" value={formData.name} onChange={handleChange} />

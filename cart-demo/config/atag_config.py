@@ -24,7 +24,7 @@ class Atag_config(object):
             'actions_file': 'config_actions.json',
             'temp_config_path': 'config/temp/',
             'click_actions': ['A', 'BUTTON'],
-            'ignore_elements': ['DIV','P'],
+            'ignore_elements': ['DIV','P', 'H2'],
             'type_actions': ['INPUT'],
             'type_word_list': ['test', 'test@test.fi']
         }
@@ -43,7 +43,7 @@ class Atag_config(object):
         self.test_env.set_browser_timeout("10 s")
         self.test_env.new_page(page)
         self.test_env.set_browser_timeout("700 ms")
-        self.stepReached = [False]
+        self.stepReached = [False, False, False]
 
     def teardown_test(self):
         self.test_env.close_page()
@@ -55,7 +55,7 @@ class Atag_config(object):
         reward = 0.0
         done = False
 
-        xpath = "//*[starts-with(., 'Grand Total: $') and number(substring-after(., 'Grand Total: $ ')) > 400]"
+        """        xpath = "//*[starts-with(., 'Grand Total: $') and number(substring-after(., 'Grand Total: $ ')) > 400]"
         if not self.stepReached[0] and "visible" in self.test_env.get_element_states(xpath):
             reward += 800.0
             self.stepReached[0] = True
@@ -63,6 +63,20 @@ class Atag_config(object):
         xpath = "//*[contains(text(),'Purchase Successful!')]"
         if "visible" in self.test_env.get_element_states(xpath):
             reward += 1000.0
+            done = True"""
+        
+
+        xpath = "//*[contains(text(),'Invalid username or password!')]"
+        if not self.stepReached[1] and "visible" in self.test_env.get_element_states(xpath):
+            print("test2ok")
+            reward += 1000.0
+            self.stepReached[1] = True
+            done = False
+
+        xpath = "//*[contains(text(),'Successful login!')]"
+        if "visible" in self.test_env.get_element_states(xpath):
+            print("test3ok")
+            reward += 1300.0
             done = True
 
         return reward, done

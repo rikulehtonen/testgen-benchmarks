@@ -21,11 +21,11 @@ parameters = {
     'gamma': 0.99,
     'gae_lambda': 0.95,
     'clip': 0.2,
-    'save_frequency': 50,
-    'trainingData': trainingData
+    'save_frequency': 50
 }
 
-""" 'actor_file': 'final-models/ppo_pretrained_actor.pt',
+""" 'trainingData': trainingData,
+    'actor_file': 'final-models/ppo_pretrained_actor.pt',
     'critic_file': 'final-models/ppo_pretrained_critic.pt'"""
 
 def main():

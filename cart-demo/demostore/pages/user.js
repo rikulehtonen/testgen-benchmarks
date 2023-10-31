@@ -20,7 +20,7 @@ const UserPage = () => {
       return;
     }
 
-    if (username === 'test user' && password === 'test') {
+    if (username === 'test@test.fi' && password === 'test') {
       setMessage({ type: 'success', content: 'Successful login!' });
     } else {
       setMessage({ type: 'error', content: 'Invalid username or password!' });
