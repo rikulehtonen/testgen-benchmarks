@@ -7,6 +7,7 @@ results
 temp
 wandb
 .next
+db.sqlite3
 
 # Logs
 playwright-log.txt
