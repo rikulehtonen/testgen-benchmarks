@@ -1,3 +1,7 @@
+import sys
+import os
+sys.path.insert(0, '../../ATAG/')
+
 import optuna
 from atag import Atag
 from browserenv import BrowserEnv
@@ -6,20 +10,22 @@ from browserenv.datahandler import TrainingData
 
 def objective(trial):
     # Parameters to be tuned
-    lr = trial.suggest_loguniform('lr', 1e-5, 1e-3)
-    entropy_coeff = trial.suggest_uniform('entropy_coeff', 0.0, 0.1)
-    clip = trial.suggest_uniform('clip', 0.1, 0.3)
-    
+    lr = trial.suggest_float('lr', 1e-5, 1e-3, log=True)
+    entropy_coeff = trial.suggest_float('entropy_coeff', 0.0, 0.1)
+    clip = trial.suggest_float('clip', 0.1, 0.3)
+
     # Fixed parameters
     fixed_parameters = {
-        'log_to_wandb': True,
+        'log_to_wandb': False,
         'max_timesteps': 4,
         'batch_timesteps': 20,
         'episode_max_timesteps': 20,
         'iteration_epochs': 4,
         'gamma': 0.99,
         'gae_lambda': 0.95,
-        'save_frequency': 50
+        'save_frequency': 50,
+        'actor_file': 'final-models/actor.pt',
+        'critic_file': 'final-models/critic.pt'        
     }
     
     parameters = {
@@ -43,7 +49,7 @@ def objective(trial):
     return metric
 
 def main():
-    study = optuna.create_study(direction='maximize')
+    study = optuna.create_study(direction='maximize', storage="sqlite:///db.sqlite3", load_if_exists=True, study_name="ppo_cart")
     study.optimize(objective, n_trials=100)
 
     print("Best trial:")
