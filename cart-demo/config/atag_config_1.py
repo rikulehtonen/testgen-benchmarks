@@ -12,7 +12,7 @@ class Atag_config(object):
             'elements_file': 'config_elements.json',
             'actions_file': 'config_actions.json',
             'config_path': 'config/',
-            'results_location': 'results/model2/',
+            'results_location': 'results/ppo_tc1_2/',
             'passed_action_cost': -5.0,
             'failed_action_cost': -25.0,
             'stagnation_cost': -15.0
@@ -54,24 +54,18 @@ class Atag_config(object):
     def state_rewards(self):
         reward = 0.0
         done = False
-
-        """        xpath = "//*[starts-with(., 'Grand Total: $') and number(substring-after(., 'Grand Total: $ ')) > 400]"
+        
+        xpath = "//*[contains(text(),'Both fields are required!')]"
         if not self.stepReached[0] and "visible" in self.test_env.get_element_states(xpath):
-            reward += 800.0
+            print("test1ok")
+            reward += 400.0
             self.stepReached[0] = True
-        
-        xpath = "//*[contains(text(),'Purchase Successful!')]"
-        if "visible" in self.test_env.get_element_states(xpath):
-            reward += 1000.0
-            done = True"""
-        
 
         xpath = "//*[contains(text(),'Invalid username or password!')]"
         if not self.stepReached[1] and "visible" in self.test_env.get_element_states(xpath):
             print("test2ok")
-            reward += 1000.0
+            reward += 700.0
             self.stepReached[1] = True
-            done = False
 
         xpath = "//*[contains(text(),'Successful login!')]"
         if "visible" in self.test_env.get_element_states(xpath):
