@@ -12,7 +12,7 @@ class Atag_config(object):
             'elements_file': 'config_elements.json',
             'actions_file': 'config_actions.json',
             'config_path': 'config/',
-            'results_location': 'results/pretrained/',
+            'results_location': 'results/ppo_tc2_1/',
             'passed_action_cost': -5.0,
             'failed_action_cost': -25.0,
             'stagnation_cost': -15.0
@@ -55,7 +55,7 @@ class Atag_config(object):
         reward = 0.0
         done = False
 
-        """xpath = "//*[starts-with(., 'Grand Total: $') and number(substring-after(., 'Grand Total: $ ')) > 400]"
+        xpath = "//*[starts-with(., 'Grand Total: $') and number(substring-after(., 'Grand Total: $ ')) > 400]"
         if not self.stepReached[0] and "visible" in self.test_env.get_element_states(xpath):
             reward += 800.0
             self.stepReached[0] = True
@@ -63,7 +63,7 @@ class Atag_config(object):
         xpath = "//*[contains(text(),'Purchase Successful!')]"
         if "visible" in self.test_env.get_element_states(xpath):
             reward += 1000.0
-            done = True"""
+            done = True
         
 
         return reward, done
