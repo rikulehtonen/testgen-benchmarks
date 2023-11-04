@@ -7,7 +7,7 @@ from browserenv import BrowserEnv
 from config.atag_config_2 import Atag_config
 from browserenv.datahandler import TrainingData
 
-trainingData = TrainingData({'training_data_path': 'config/temp/', 'filename': f'ppo_tc2_training_data.json'})
+trainingData = TrainingData({'training_data_path': 'config/temp/', 'filename': f'ppo_tc2_training_data_3.json'})
 
 #Parameters for Atag & algorithm
 parameters = {

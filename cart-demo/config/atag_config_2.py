@@ -7,12 +7,13 @@ class Atag_config(object):
     def __init__(self):
         self.test_env = None
         self.stepReached = [False, False, False]
+        self.stepReachedCount = [0, 0, 0]
 
         self.env_parameters = {
             'elements_file': 'config_elements.json',
             'actions_file': 'config_actions.json',
             'config_path': 'config/',
-            'results_location': 'results/ppo_tc2_1/',
+            'results_location': 'results/ppo_tc2_3/',
             'passed_action_cost': -5.0,
             'failed_action_cost': -25.0,
             'stagnation_cost': -15.0
@@ -59,10 +60,12 @@ class Atag_config(object):
         if not self.stepReached[0] and "visible" in self.test_env.get_element_states(xpath):
             reward += 800.0
             self.stepReached[0] = True
+            self.stepReachedCount[0] += 1
         
         xpath = "//*[contains(text(),'Purchase Successful!')]"
         if "visible" in self.test_env.get_element_states(xpath):
             reward += 1000.0
+            self.stepReachedCount[1] += 1
             done = True
         
 
