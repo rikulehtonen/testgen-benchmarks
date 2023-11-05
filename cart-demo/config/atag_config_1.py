@@ -13,7 +13,7 @@ class Atag_config(object):
             'elements_file': 'config_elements.json',
             'actions_file': 'config_actions.json',
             'config_path': 'config/',
-            'results_location': 'results/ppo_tc1_6/',
+            'results_location': 'results/ppo_tc1_7/',
             'passed_action_cost': -5.0,
             'failed_action_cost': -25.0,
             'stagnation_cost': -15.0
@@ -58,18 +58,16 @@ class Atag_config(object):
         
         xpath = "//button[contains(text(),'Login')]"
         if not "visible" in self.test_env.get_element_states(xpath):
-            reward -= 10
+            reward -= 30
 
         xpath = "//*[contains(text(),'Invalid username or password!')]"
         if not self.stepReached[1] and "visible" in self.test_env.get_element_states(xpath):
-            print("test2ok")
             reward += 500.0
             self.stepReached[1] = True
             self.stepReachedCount[1] += 1
 
         xpath = "//*[contains(text(),'Successful login!')]"
         if "visible" in self.test_env.get_element_states(xpath):
-            print("test3ok")
             reward += 1000.0
             self.stepReachedCount[2] += 1
             done = True
