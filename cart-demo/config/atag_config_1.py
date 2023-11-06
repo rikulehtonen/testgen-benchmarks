@@ -13,7 +13,7 @@ class Atag_config(object):
             'elements_file': 'config_elements.json',
             'actions_file': 'config_actions.json',
             'config_path': 'config/',
-            'results_location': 'results/ppo_tc1_7/',
+            'results_location': 'results/ppo_tc1_9/',
             'passed_action_cost': -5.0,
             'failed_action_cost': -25.0,
             'stagnation_cost': -15.0

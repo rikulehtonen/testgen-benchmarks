@@ -10,7 +10,7 @@ from config.atag_config_2 import Atag_config
 parameters = {
     "log_to_wandb": False,
     "online_training": False,
-    "pretrained_model": "final-models\odt_tc2_pretrain_1.pt",
+    "pretrained_model": "final-models\odt_tc2.pt",
     "eval_only": True,
     "mode": "normal",
     "K": 20,
