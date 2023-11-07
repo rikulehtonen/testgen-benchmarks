@@ -4,9 +4,11 @@ driver
 __pycache__
 .DS_Store
 results
+training-results
 temp
 wandb
 .next
+db.sqlite3
 
 # Logs
 playwright-log.txt
