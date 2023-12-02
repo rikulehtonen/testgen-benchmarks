@@ -54,5 +54,7 @@ def main():
     atag_browser.experiment()
     browserEnv.terminate()
 
+    print(config.stepReachedCount)
+
 if __name__ == '__main__':
     main()

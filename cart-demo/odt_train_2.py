@@ -26,7 +26,7 @@ parameters = parameters = {
     "weight_decay": 5e-4,
     "warmup_steps": 1000,
     "num_eval_episodes": 30,
-    "max_iters": 70,
+    "max_iters": 10,
     "num_steps_per_iter": 1000,
     "device": "cuda",
     "save_model": False,

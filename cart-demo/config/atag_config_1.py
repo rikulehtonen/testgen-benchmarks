@@ -8,6 +8,7 @@ class Atag_config(object):
         self.test_env = None
         self.stepReached = [False, False, False]
         self.stepReachedCount = [0, 0, 0]
+        self.label = ''
 
         self.env_parameters = {
             'elements_file': 'config_elements.json',
@@ -21,6 +22,8 @@ class Atag_config(object):
 
         self.data_collection = {
             'collect_data': False,
+            'collect_path': True,
+            'collect_path_file': 'tc_1_path.json',
             'elements_file': 'config_elements.json',
             'actions_file': 'config_actions.json',
             'temp_config_path': 'config/temp/',
@@ -55,21 +58,25 @@ class Atag_config(object):
     def state_rewards(self):
         reward = 0.0
         done = False
-        
+        self.label = '0'
+
         xpath = "//button[contains(text(),'Login')]"
         if not "visible" in self.test_env.get_element_states(xpath):
             reward -= 30
+            self.label = ''
 
         xpath = "//*[contains(text(),'Invalid username or password!')]"
         if not self.stepReached[1] and "visible" in self.test_env.get_element_states(xpath):
             reward += 500.0
             self.stepReached[1] = True
             self.stepReachedCount[1] += 1
+            self.label = '1'
 
         xpath = "//*[contains(text(),'Successful login!')]"
         if "visible" in self.test_env.get_element_states(xpath):
             reward += 1000.0
             self.stepReachedCount[2] += 1
             done = True
+            self.label = '2'
 
         return reward, done

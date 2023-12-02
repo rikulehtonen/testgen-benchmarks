@@ -4,13 +4,13 @@ sys.path.insert(0, '../../ATAG/')
 
 from atag import Atag2
 from browserenv import BrowserEnv
-from config.atag_config_2 import Atag_config
+from config.atag_config_1 import Atag_config
 
 #Parameters for Atag & algorithm
 parameters = {
     "log_to_wandb": False,
     "online_training": False,
-    "pretrained_model": "final-models\odt_tc1_pretrain_3.pt",
+    "pretrained_model": "final-models\odt_tc1.pt",
     "eval_only": True,
     "mode": "normal",
     "K": 20,
@@ -39,7 +39,7 @@ parameters = {
     "target_entropy": False,
     "stochastic_tanh": False,
     "approximate_entropy_samples": 1000,
-    "dataset_path": "final-models/ppo_tc2_training_data_3.json"
+    "dataset_path": "final-models/ppo_tc1_training_data_9.json"
 }
 
 def main():
@@ -53,6 +53,8 @@ def main():
     # Train 
     atag_browser.experiment()
     browserEnv.terminate()
+
+    print(config.stepReachedCount)
 
 if __name__ == '__main__':
     main()
