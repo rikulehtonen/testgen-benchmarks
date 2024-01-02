@@ -8,6 +8,7 @@ class Atag_config(object):
         self.test_env = None
         self.stepReached = [False, False, False]
         self.stepReachedCount = [0, 0, 0]
+        self.label = ''
 
         self.env_parameters = {
             'elements_file': 'config_elements.json',
@@ -21,6 +22,8 @@ class Atag_config(object):
 
         self.data_collection = {
             'collect_data': False,
+            'collect_path': True,
+            'collect_path_file': 'tc_2_path.json',
             'elements_file': 'config_elements.json',
             'actions_file': 'config_actions.json',
             'temp_config_path': 'config/temp/',
@@ -55,18 +58,26 @@ class Atag_config(object):
     def state_rewards(self):
         reward = 0.0
         done = False
+        self.label = ''
+
+        if 'category' in self.test_env.get_url():
+            self.label = 'C'
+        if 'search' in self.test_env.get_url():
+            self.label = 'S'
 
         xpath = "//*[starts-with(., 'Grand Total: $') and number(substring-after(., 'Grand Total: $ ')) > 400]"
         if not self.stepReached[0] and "visible" in self.test_env.get_element_states(xpath):
             reward += 800.0
             self.stepReached[0] = True
             self.stepReachedCount[0] += 1
+            self.label = '1'
         
         xpath = "//*[contains(text(),'Purchase Successful!')]"
         if "visible" in self.test_env.get_element_states(xpath):
             reward += 1000.0
             self.stepReachedCount[1] += 1
             done = True
+            self.label = '2'
         
 
         return reward, done

@@ -20,6 +20,15 @@ const Navbar = () => {
     }
   };
 
+  const userText = () => {
+    return "User";
+    if (router.pathname === '/shop') {
+      return "User";
+    } else {
+      return "";
+    }
+  };
+
   return (
     <nav className={styles.navbar}>
       <h6 className={styles.logo}>ROBO_STORE</h6>
@@ -41,7 +50,7 @@ const Navbar = () => {
           <Link href="/shop">Shop</Link>
         </li>
         <li className={styles.navlink}>
-          <Link href="/user">User</Link>
+          <Link href="/user">{userText()}</Link>
         </li>
         <li className={styles.navlink}>
           <Link href="/cart">

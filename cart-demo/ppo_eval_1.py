@@ -37,6 +37,8 @@ def main():
     print(np.mean(results))
     print("std")
     print(np.std(results))
+    print("max")
+    print(np.max(results))
     print(config.stepReachedCount)
     print("=" * 10)
 
